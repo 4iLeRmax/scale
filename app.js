@@ -29,6 +29,7 @@ block2.ontouchstart = (e)=>{
   // console.log(y1,y11);
 }
 block2.ontouchmove = (e)=>{
+  e.preventDefault();
   y2 = e.touches[0].clientY;
   y22 = e.touches[1].clientY;
   console.log(y2);
@@ -47,5 +48,6 @@ block2.ontouchmove = (e)=>{
     console.log('уменьшение  ' + (y1-y2));
     out.innerHTML+= 'уменьшение' + '<br>';
   }
+  return false;
 }
 
