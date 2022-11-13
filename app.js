@@ -68,20 +68,20 @@ block2.ontouchmove = (e)=>{
   console.log('Y22  ' + y22);
   
   y1Diff = y1-y2;
-  y11Diff = y11-y22;
+  y11Diff = y22-y11;
   let scale1 = y1Diff/10;
   let scale11 = y11Diff/10;
 
 
 
   if(y1 > y2 || y11 < y22){
-    console.log("BIG scale1 " + scale1);
+    // console.log("BIG scale1 " + scale1);
     console.log("BIG scale11 " + scale11);
     // if(scale1<10 && scale1>=1){
-      img.style.transform = `scale(${scale1})`;
+      // img.style.transform = `scale(${scale1})`;
     // }
     // if(scale11>10 && scale11<=1){
-      img.style.transform = `scale(${scale11})`;
+      img.style.transform = `scale(${(scale1 + scale11)/2})`;
     // }
     // else if(scale1>1){
     //   img.style.transform = `scale(${scale1})`;
