@@ -18,8 +18,8 @@
   overflow: hidden;
   position: relative;
 }
-.block-2 img{
-  width: 100%;
+img{
+  width: 250px;
   transform: scale(1);
   position: absolute;
   /* top: 50%; */
