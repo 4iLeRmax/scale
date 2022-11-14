@@ -56,7 +56,8 @@ let img = document.querySelector('.block-2 img')
 block2.ontouchstart = (e)=>{
   y1=e.touches[0].clientY;
   y11=e.touches[1].clientY;
-  console.log('Y1  ' + y1);
+  // console.log('Y1  ' + y1);
+
   // console.log('Y11  ' + y11);
 }
 block2.ontouchmove = (e)=>{
@@ -64,7 +65,8 @@ block2.ontouchmove = (e)=>{
 
   y2 = e.touches[0].clientY;
   y22 = e.touches[1].clientY;
-  console.log('Y2  ' + y2);
+  // console.log('Y2  ' + y2);
+
   // console.log('Y22  ' + y22);
   
   let scale1 = (y1-y2)/10;
@@ -86,5 +88,15 @@ block2.ontouchmove = (e)=>{
         img.style.transform = `scale(${scale11})`;
       }
   }
+  let top = (e.touches[0].clientY)/2;
+  let left = (e.touches[0].clientX)/2;
+  if(scale1>1){
+    console.log(top,left);
+    img.style.top = top + 'px';
+    img.style.left = left + 'px';
+    // img.style.transform = `translate(${left}px, ${top}px)`;
+  }
+
+
   return false;
 }
