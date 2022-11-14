@@ -69,16 +69,18 @@ block2.ontouchmove = (e)=>{
   
   let scale1 = (y1-y2)/10;
   // let scale11 = (y11-y22)/10;
-  let scale11 =  scale1 + y2/50;
+  let scale11 =  scale1 + y2/20;
   console.log();
 
   if(y1 > y2 || y1 || y11){
+  // if(y1 > y2){
     console.log("BIG scale1 " + scale1);
     if(scale1<10 && scale1>=1){
       img.style.transform = `scale(${scale1})`;
     }
   }
   else if(y1 < y2 || y2 || y22){
+  // else if(y1 < y2){
       console.log("SMALL scale11 " + scale11);
       if(scale11>1){
         img.style.transform = `scale(${scale11})`;
