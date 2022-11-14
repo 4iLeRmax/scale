@@ -57,7 +57,7 @@ block2.ontouchstart = (e)=>{
   y1=e.touches[0].clientY;
   y11=e.touches[1].clientY;
   console.log('Y1  ' + y1);
-  console.log('Y11  ' + y11);
+  // console.log('Y11  ' + y11);
 }
 block2.ontouchmove = (e)=>{
   e.preventDefault();
@@ -65,36 +65,24 @@ block2.ontouchmove = (e)=>{
   y2 = e.touches[0].clientY;
   y22 = e.touches[1].clientY;
   console.log('Y2  ' + y2);
-  console.log('Y22  ' + y22);
+  // console.log('Y22  ' + y22);
   
-  y1Diff = y1-y2;
-  y11Diff = y22-y11;
-  let scale1 = y1Diff/10;
-  let scale11 = y11Diff/10;
+  let scale1 = (y1-y2)/10;
+  // let scale11 = (y11-y22)/10;
+  let scale11 =  scale1 + y2/50;
+  console.log();
 
-
-
-  if(y1 > y2 || y11 < y22){
-    // console.log("BIG scale1 " + scale1);
-    console.log("BIG scale11 " + scale11);
-    // if(scale1<10 && scale1>=1){
-      // img.style.transform = `scale(${scale1})`;
-    // }
-    // if(scale11>10 && scale11<=1){
-      img.style.transform = `scale(${(scale1 + scale11)/2})`;
-    // }
-    // else if(scale1>1){
-    //   img.style.transform = `scale(${scale1})`;
-    // }
+  if(y1 > y2 || y1 || y11){
+    console.log("BIG scale1 " + scale1);
+    if(scale1<10 && scale1>=1){
+      img.style.transform = `scale(${scale1})`;
+    }
   }
-  // else if(y1<y2){
-  //   console.log('small  ' + scale11);
-  //   if(scale11>1){
-  //     img.style.transform = `scale(${scale11})`;
-  //   }
-  // }
-  // console.log(img.clientWidth);
-
-  // if()
+  else if(y1 < y2 || y2 || y22){
+      console.log("SMALL scale11 " + scale11);
+      if(scale11>1){
+        img.style.transform = `scale(${scale11})`;
+      }
+  }
   return false;
 }
